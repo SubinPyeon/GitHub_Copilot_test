@@ -1,0 +1,5 @@
+{
+  "sdk": {
+    "allowPrerelease": false // prerelease 쓰지 않겠다
+  }
+}

@@ -68,8 +68,6 @@
         }
       },
 
-    
-  
     // on-create.sh 스크립트 실행 명령어
     "onCreateCommand": "/bin/bash ./.devcontainer/on-create.sh > ~/on-create.log",
   

@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: hg-codespace-copilot
+
+infra:
+  provider: "bicep"
+  path: "infra"
+  module: "main"
+
+pipeline:
+  provider: "github"
+
+  subscriptionId=$(az account show --query "id" -o tsv)
+az ad sp create-for-rbac \
+    --name "spn-hg19390" --role contributor \
+    --scopes /subscriptions/$subscriptionId \
+    --sdk-auth
